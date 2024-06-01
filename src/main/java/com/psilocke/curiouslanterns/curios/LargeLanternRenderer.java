@@ -66,7 +66,7 @@ public class LargeLanternRenderer implements ICurioRenderer {
 		}
 		matrixStack.scale(0.25f, 0.25f, 0.25f);
 		BakedModel lantern = blockRenderer.getBlockModel(Block.byItem(stack.getItem()).defaultBlockState());
-		MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
+		MultiBufferSource.BufferSource buffer = Minecraft.getInstance().levelRenderer.renderBuffers.bufferSource();
 		itemRenderer.render(stack, ItemTransforms.TransformType.HEAD, true, matrixStack, buffer, light, OverlayTexture.NO_OVERLAY, lantern);
 		matrixStack.popPose();
 	}
